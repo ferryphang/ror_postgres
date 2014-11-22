@@ -3,12 +3,11 @@ lock '3.2.1'
 
 set :application, 'ror_postgres'
 set :repo_url, 'git@github.com:ferryphang/ror_postgres.git'
-set :user, 'deploy'
 # Default branch is :master
-ask :branch, 'capistrano'
+set :branch, 'capistrano'
 
 # Default deploy_to directory is /var/www/my_app
-set :deploy_to, "/home/#{user}/apps/#{application}"
+set :deploy_to, "/home/deploy/apps"
 set :deploy_via, :remote_cache
 # Default value for :scm is :git
 # set :scm, :git
@@ -43,7 +42,7 @@ namespace :deploy do
       execute :touch, release_path.join('tmp/restart.txt')
     end
   end
-  
+
   after :publishing, :restart
 
   after :restart, :clear_cache do

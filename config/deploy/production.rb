@@ -3,7 +3,7 @@
 # Supports bulk-adding hosts to roles, the primary server in each group
 # is considered to be the first unless any hosts have the primary
 # property set.  Don't declare `role :all`, it's a meta role.
-
+set :stage, :production
 role :app, %w{deploy@104.236.48.45}
 role :web, %w{deploy@104.236.48.45}
 role :db,  %w{deploy@104.236.48.45}

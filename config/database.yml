@@ -6,11 +6,9 @@ default: &default
 development:
   <<: *default
   database: ror_postgres_development
-
 test:
   <<: *default
   database: ror_postgres_test
-
 production:
   <<: *default
   database: ror_postgres_production

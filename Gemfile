@@ -14,7 +14,7 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'mina'
 gem "twitter-bootstrap-rails"
 gem 'delayed_job_active_record'
-
+gem 'daemons'
 
 group :development do
 	gem 'capistrano',  '~> 3.1'

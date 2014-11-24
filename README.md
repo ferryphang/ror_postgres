@@ -18,9 +18,13 @@ ssh-copy-id deploy@host
 - Package Install
 ```bash
 sudo apt-get update
-sudo apt-get install git-core curl zlib1g-dev build-essential libssl-dev libreadline-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt1-dev libcurl4-openssl-dev python-software-properties nodejs image imagemagick php5-imagick postgresql postgresql-contrib libpq-dev
+sudo apt-get install git-core curl zlib1g-dev build-essential libssl-dev libreadline-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt1-dev libcurl4-openssl-dev python-software-properties nodejs 
 ```
 
+```bash
+IMAGE MAGICK
+sudo apt-get install image imagemagick php5-imagick 
+```
 - Ruby RBENV
 ```bash
 cd
@@ -69,6 +73,7 @@ passenger_ruby /usr/bin/ruby;
 ```
 - POSTGRESQL
 ```bash
+sudo apt-get install postgresql postgresql-contrib libpq-dev
 sudo su - postgres
 createuser --interactive
 psql
@@ -85,7 +90,7 @@ server {
         listen 80;
         passenger_enabled on;
         rails_env production;
-        root /var/www/ror_postgres/current/public;
+        root /home/deploy/ror_postgres/current/public;
 }
 ```
 - MINA Setup

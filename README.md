@@ -100,3 +100,10 @@ chown -R deploy /var/www/postgres
 touch /shared/config/database.yml, secrets.yml
 ```
 
+- MONIT delayed_job configuration
+```bash
+/etc/monit/conf.d/file_name
+check process delayed_job with pidfile /home/deploy/ror_postgres/current/tmp/pids/delayed_job.pid
+    start program = "/bin/su - deploy && /bin/bash -c 'cd /home/deploy/ror_postgres/current && PATH=/home/deploy/.rbenv/bin:/home/deploy/.rbenv/shims:$PATH RAILS_ENV=production ./bin/delayed_job start'" with timeout 280 seconds
+    stop program = "/bin/su - deploy && /bin/bash -c 'cd /home/deploy/ror_postgres/current && PATH=/home/deploy/.rbenv/bin:/home/deploy/.rbenv/shims:$PATH RAILS_ENV=production ./bin/delayed_job stop" with timeout 280 seconds
+```

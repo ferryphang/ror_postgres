@@ -7,7 +7,7 @@ set :repo_url, 'git@github.com:ferryphang/ror_postgres.git'
 set :branch, 'capistrano'
 
 # Default deploy_to directory is /var/www/my_app
-set :deploy_to, "/home/deploy/apps"
+set :deploy_to, "/home/deploy/#{application}"
 set :deploy_via, :remote_cache
 # Default value for :scm is :git
 # set :scm, :git

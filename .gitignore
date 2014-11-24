@@ -31,5 +31,5 @@ pickle-email-*.html
 bower.json
 
 #SENSITIVE
-secrets.yml
-database.yml
+config/database.yml
+config/secrets.yml
